@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package pcaas;
+
+option go_package="pcaas-grpc/pb";
+
+message HelloWorld {
+    string message = 1;
+}
+
+message HelloWorldRequest {
+    HelloWorld hello = 1;
+}
+
+message HelloWorldResponse {
+    string response = 1;
+}
+
+service HelloWorldService {
+    rpc HelloWorld(HelloWorldRequest) returns (HelloWorldResponse){};
+}
