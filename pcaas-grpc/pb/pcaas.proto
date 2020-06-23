@@ -16,6 +16,20 @@ message HelloWorldResponse {
     string response = 1;
 }
 
+
 service HelloWorldService {
+    // Unary RPC
     rpc HelloWorld(HelloWorldRequest) returns (HelloWorldResponse){};
+
+    // Server Streaming
+    rpc HelloWorldServerStream(HelloWorldRequest) returns (stream
+     HelloWorldResponse){};
+
+    // Client Streaming
+    rpc HelloWorldClientStream(stream HelloWorldRequest) returns (
+    HelloWorldResponse){};
+
+    //Bidirectional streaming
+    rpc HelloWorldBiDirectionalStream(stream HelloWorldRequest) returns (
+    stream HelloWorldResponse){};
 }

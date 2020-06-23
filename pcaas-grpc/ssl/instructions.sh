@@ -23,3 +23,6 @@ openssl req -new -key service.key -out service.csr -config certificate.conf
 openssl x509 -req -in service.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out service.pem -days 365 -sha256 -extfile certificate.conf -extensions req_ext
 
 openssl x509 -in service.pem -text -noout
+
+
+# Reference: https://itnext.io/practical-guide-to-securing-grpc-connections-with-go-and-tls-part-1-f63058e9d6d1
