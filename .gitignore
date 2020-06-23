@@ -16,3 +16,5 @@
 
 .idea/
 *pb.go
+
+.DS_Store
